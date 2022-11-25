@@ -14,16 +14,21 @@ class Layer {
 
   Rect get position => _position;
 
-  Rect _position;
+  Rect _position = Rect.zero;
+
+  bool get visible => _visible;
+
+  bool _visible = true;
 
   Layer({
     required this.id,
     required this.type,
-  }) : _position = Rect.zero;
+  });
 
   dynamic serialize() => {
         'id': id,
         'type': type.name,
+        'visible': visible,
         'position': {
           'left': position.left,
           'top': position.top,
@@ -37,7 +42,9 @@ class Layer {
     return Layer(
       id: map['id'],
       type: LayerType.values.firstWhere((e) => e.name == map['type']),
-    ).._position = Rect.fromLTRB(
+    )
+      .._visible = map['visible'] ?? true
+      .._position = Rect.fromLTRB(
         map['position']['left'],
         map['position']['top'],
         map['position']['right'],
@@ -111,6 +118,11 @@ class LayerManager extends ChangeNotifier {
 
   bool isPresetSelected(Preset preset) {
     return _currentPreset == preset;
+  }
+
+  void setLayerVisible(Layer layer, bool visible) {
+    layer._visible = visible;
+    notifyListeners();
   }
 
   void _addLayer(Layer layer) {

@@ -47,7 +47,7 @@ class LayerStack extends StatelessWidget {
     Widget stack = Stack(
       key: _stackKey,
       clipBehavior: Clip.none,
-      children: manager.layers.map((layer) {
+      children: manager.layers.where((layer) => layer.visible).map((layer) {
         return Positioned.fromRect(
           key: ValueKey(layer.id),
           rect: layer.position,

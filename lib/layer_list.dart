@@ -52,6 +52,15 @@ class LayerList extends StatelessWidget {
                         ),
                       ),
                       Simplebutton(
+                        child: Icon(layer.visible
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                        onPressed: () {
+                          manager.setLayerVisible(layer, !layer.visible);
+                        },
+                      ),
+                      const SizedBox(width: 8),
+                      Simplebutton(
                         child: const Icon(Icons.delete),
                         onPressed: () {
                           manager.removeLayer(layer);
