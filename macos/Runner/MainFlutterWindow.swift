@@ -39,7 +39,7 @@ class FLNativeView: NSView {
     ) {
         super.init(frame: frame)
         super.wantsLayer = true
-        super.layer?.backgroundColor = NSColor.blue.cgColor
+        super.layer?.backgroundColor = NSColor.systemBlue.cgColor
         super.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         super.addSubview(createLabel())
     }
@@ -47,11 +47,11 @@ class FLNativeView: NSView {
     override func hitTest(_ point: NSPoint) -> NSView? {
         return nil
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         super.wantsLayer = true
-        super.layer?.backgroundColor = NSColor.blue.cgColor
+        super.layer?.backgroundColor = NSColor.systemGreen.cgColor
         super.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         super.addSubview(createLabel())
     }
@@ -63,11 +63,11 @@ class MainFlutterWindow: NSWindow {
     let windowFrame = self.frame
     self.contentViewController = flutterViewController
     self.setFrame(windowFrame, display: true)
-      
+
     let factory = FLNativeViewFactory(messenger: flutterViewController.engine.binaryMessenger)
     let registrar = flutterViewController.engine.registrar(forPlugin: "dummy");
     registrar.register(factory, withId: "@views/simple-box-view-type")
-      
+
     RegisterGeneratedPlugins(registry: flutterViewController)
 
     super.awakeFromNib()
