@@ -1,16 +1,15 @@
 # layer_playground
 
-A new Flutter project.
+Playground for platform views on macOS.
+
+<img width="1262" alt="Screenshot 2022-11-25 at 19 02 37" src="https://user-images.githubusercontent.com/96958/204036877-e06348dd-d250-42fe-8867-2724d2be23b4.png">
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Checkout and build this Flutter Engine branch:
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/knopp/engine/tree/macos_platform_views
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+flutter run -d macos --local-engine=host_debug_unopt
+```
