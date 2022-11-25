@@ -23,6 +23,7 @@ public func createLabel() -> NSTextField {
     nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
     nativeLabel.stringValue = "Native text from macOS"
     nativeLabel.textColor = NSColor.red
+    nativeLabel.font = NSFont.systemFont(ofSize: 14)
     nativeLabel.isBezeled = false
     nativeLabel.isEditable = false
     nativeLabel.sizeToFit()

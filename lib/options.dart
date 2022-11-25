@@ -12,7 +12,7 @@ class Options extends StatelessWidget {
   Widget build(BuildContext context) {
     final manager = context.watch<LayerManager>();
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(12.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -61,7 +61,7 @@ class Options extends StatelessWidget {
               ),
             ].intersperse(const SizedBox(width: 8)).toList(growable: false),
           )
-        ].intersperse(const SizedBox(height: 8)).toList(growable: false),
+        ].intersperse(const SizedBox(height: 10)).toList(growable: false),
       ),
     );
   }
