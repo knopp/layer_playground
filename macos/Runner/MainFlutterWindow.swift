@@ -25,7 +25,8 @@ public func createLabel() -> NSTextField {
     nativeLabel.textColor = NSColor.red
     nativeLabel.font = NSFont.systemFont(ofSize: 14)
     nativeLabel.isBezeled = false
-    nativeLabel.isEditable = false
+    nativeLabel.focusRingType = .none
+    nativeLabel.isEditable = true
     nativeLabel.sizeToFit()
     return nativeLabel
 }
@@ -45,9 +46,6 @@ class FLNativeView: NSView {
         super.addSubview(createLabel())
     }
 
-    override func hitTest(_ point: NSPoint) -> NSView? {
-        return nil
-    }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
