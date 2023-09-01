@@ -46,6 +46,16 @@ class FLNativeView: NSView {
         super.addSubview(createLabel())
     }
 
+    override func hitTest(
+         _ point: NSPoint
+    ) -> NSView? {
+        let res = super.hitTest(point);
+        if res == self {
+            return nil;
+        } else {
+            return res;
+        }
+    }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
