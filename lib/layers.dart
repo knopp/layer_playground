@@ -45,14 +45,12 @@ class NativeLayer extends StatelessWidget {
     return LayerDrag(
       layer: layer,
       manager: manager,
-      child: IgnorePointer(
-        child: UiKitView(
-          hitTestBehavior: PlatformViewHitTestBehavior.translucent,
-          viewType: viewType,
-          layoutDirection: TextDirection.ltr,
-          creationParams: creationParams,
-          creationParamsCodec: const StandardMessageCodec(),
-        ),
+      child: UiKitView(
+        hitTestBehavior: PlatformViewHitTestBehavior.translucent,
+        viewType: viewType,
+        layoutDirection: TextDirection.ltr,
+        creationParams: creationParams,
+        creationParamsCodec: const StandardMessageCodec(),
       ),
     );
   }
